@@ -1,0 +1,13 @@
+.column-thumbnail{
+	width: 90px;
+}
+.column-post_id{
+	width: 50px;
+}
+.colName{
+	background-color: #a33;
+	color: #fff;
+	width: intrinsic;
+	padding: 1px 6px;
+	border-radius: 3px;
+}

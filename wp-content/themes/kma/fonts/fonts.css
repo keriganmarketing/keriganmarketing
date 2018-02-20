@@ -1,0 +1,68 @@
+/* FONTS */
+/*@import url('https://fonts.googleapis.com/css?family=Heebo:300,500|Work+Sans:800');*/
+
+@font-face {
+  font-family: 'Dharma Gothic Bold'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Bold'), local('Dharma-Gothic-Bold'), url('/wp-content/themes/kma/fonts/dharmagothice_bold_r-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_bold_r-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Extra Bold Italic'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Extra Bold Italic'), local('Dharma-Gothic-Extra-Bold-Italic'), url('/wp-content/themes/kma/fonts/dharmagothice_exbold_i-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_exbold_i-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Extra Bold'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Extra Bold'), local('Dharma-Gothic-Extra-Bold'), url('/wp-content/themes/kma/fonts/dharmagothice_exbold_r-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_exbold_r-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Extra Light Italic'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Extra Light Italic'), local('Dharma-Gothic-Extra-Light-Italic'), url('/wp-content/themes/kma/fonts/dharmagothice_exlight_i-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_exlight_i-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Extra Light'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Extra Light'), local('Dharma-Gothic-Extra-Light'), url('/wp-content/themes/kma/fonts/dharmagothice_exlight_r-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_exlight_r-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Heavy Italic'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Heavy Italic'), local('Dharma-Gothic-Heavy-Italic'), url('/wp-content/themes/kma/fonts/dharmagothice_heavy_i-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_heavy_i-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Heavy'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Heavy'), local('Dharma-Gothic-Heavy'), url('/wp-content/themes/kma/fonts/dharmagothice_heavy_r-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_heavy_r-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Light Italic'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Light Italic'), local('Dharma-Gothic-Light-Italic'), url('/wp-content/themes/kma/fonts/dharmagothice_light_i-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_light_i-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Light'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Light'), local('Dharma-Gothic-Light'), url('/wp-content/themes/kma/fonts/dharmagothice_light_r-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_light_r-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Regular Italic'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Regular Italic'), local('Dharma-Gothic-Regular-Italic'), url('/wp-content/themes/kma/fonts/dharmagothice_regular_i-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_regular_i-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Dharma Gothic Regular'; font-weight: normal; font-style: normal;
+  src: local('Dharma Gothic Regular'), local('Dharma-Gothic-Regular'), url('/wp-content/themes/kma/fonts/dharmagothice_regular_r-webfont.woff2') format('woff2'),
+  url('/wp-content/themes/kma/fonts/dharmagothice_regular_r-webfont.woff') format('woff');
+}
