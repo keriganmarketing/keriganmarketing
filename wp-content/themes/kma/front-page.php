@@ -17,7 +17,7 @@ get_header(); ?>
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col text-center">
-                    <div class="mast-content">
+                    <div class="mast-content hidden">
                         <p class="home-tag">Serious Creativity</p>
                         <h1>We Build Brands Like Nobody’s Business.</h1>
                         <a class="btn btn-clear btn-lg" style="margin:.5rem;" href="/portfolio/">See Our Work</a> &nbsp; <a class="btn btn-clear btn-lg" style="margin:.5rem;" href="/services/">Let's Get started</a>
@@ -103,19 +103,19 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="row justify-content-center align-items-center">
-                
+
                 <?php
-                
-                $serviceAreas = get_terms( array( 
+
+                $serviceAreas = get_terms( array(
                     'taxonomy' => 'service_category',
                     'orderby' => 'menu_order',
-                    'order' => 'ASC' 
+                    'order' => 'ASC'
                 ) );
-                
-				foreach($serviceAreas as $serviceArea){ 
-                    
+
+				foreach($serviceAreas as $serviceArea){
+
                     //print_r($serviceArea);
-                    
+
                     //Get Taxonomy Info
                     $categoryName = get_field('short_name', $serviceArea->taxonomy . '_' . $serviceArea->term_id);
                     $serviceSlug = $serviceArea->slug;
@@ -137,9 +137,9 @@ get_header(); ?>
                         'post_status' => 'publish',
                         'suppress_filters' => true,
                     );
-                    
+
                     $servItems = get_posts( $args, ARRAY_A );
-                    
+
 				?>
 
 				<div class="col-lg-4 col-xl-3">
@@ -147,30 +147,30 @@ get_header(); ?>
                         <h2><?php echo $categoryName; ?></h2>
                         <div class="dividerline"></div>
                         <?php foreach($servItems as $service){
-                    
+
                                 //print_r($service);
-                                
+
                                 $serv_id = $service->ID;
                                 $isEnabled = get_field('enable_link',$serv_id);
                                 $serviceName = $service->post_title;
-                                $serviceLink = get_permalink($serv_id);	
-                                
+                                $serviceLink = get_permalink($serv_id);
+
                                 if($isEnabled === TRUE){ ?>
                                     <h3><a href="<?php echo $serviceLink; ?>" class="service-link" ><?php echo $serviceName; ?></a></h3>
-                        
+
                                 <?php }else{ ?>
-                        
+
                                     <h3><span class="service-link" ><?php echo $serviceName; ?></span></h3>
-                        
+
                                 <?php } ?>
-                        
+
                         <?php } ?>
-                    
+
 					</div>
 				</div>
 
 			<?php } ?>
-                
+
 			</div>
 		</div>
     </div>
@@ -182,7 +182,7 @@ get_header(); ?>
 				</div>
 			</div>
 			<div class="row">
-				
+
 				<?php
 					$args = array(
 						'numberposts' => 6,
@@ -203,10 +203,10 @@ get_header(); ?>
 
 					$featured_work = get_posts( $args, ARRAY_A );
 
-					foreach($featured_work as $work){ 
+					foreach($featured_work as $work){
 						$work_id = $work->ID;
 						$thumb_id = get_post_thumbnail_id( $work_id );
-						$thumb = wp_get_attachment_image_src( $thumb_id, 'medium'); 
+						$thumb = wp_get_attachment_image_src( $thumb_id, 'medium');
 						$thumb_url = $thumb[0];
                         $workContent = $work->post_content;
 						$tax = get_the_terms( $work_id, 'client' );
@@ -221,19 +221,19 @@ get_header(); ?>
                                 if($w <= count($types)){ $workTypes .= '<span class="seperator">/</span>'; }
                             }
                         }
-						
+
 						if(get_field('link',$work_id) != ''){
 							$link = get_field('link',$work_id);
 						}else{
-							$link = get_permalink($work_id);	
+							$link = get_permalink($work_id);
 						}
-                        
+
                         if(get_field('background_color',$work_id)!=''){
                             $bgColor = get_field('background_color',$work_id);
                         }else{
                             $bgColor = '#DDDDDD';
                         }
-						
+
 					?>
 
 					<div class="col-lg-6">
@@ -280,11 +280,11 @@ get_header(); ?>
 
 				$recent_posts = wp_get_recent_posts( $args, ARRAY_A );
 
-				foreach($recent_posts as $article){ 
+				foreach($recent_posts as $article){
 					$article_id = $article['ID'];
 					$post_date = $article['post_date'];
 					$thumb_id = get_post_thumbnail_id( $article_id );
-					$thumb = wp_get_attachment_image_src( $thumb_id, 'medium'); 
+					$thumb = wp_get_attachment_image_src( $thumb_id, 'medium');
 					$thumb_url = $thumb[0];
 
 					//echo $article_id;
@@ -306,7 +306,7 @@ get_header(); ?>
 						<p class="read-more">Read More</p>
 						</div>
 						<a href="<?php echo get_permalink($article_id); ?>" class="article-box-link"></a>
-					</div>	
+					</div>
 				</div>
 
 			<?php } ?>
