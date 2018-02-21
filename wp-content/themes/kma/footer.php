@@ -9,7 +9,6 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
 }
 ?>
 <div id="continue-section">
-
     <div class="container">
         <div class="row">
             <div class="offset-md-2 col-md-8">
@@ -32,7 +31,6 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
             </div>
         </div>
     </div>
-
 </div>
 <div id="bot" class="unstick fadein">
     <div class="container-fluid no-gutter">

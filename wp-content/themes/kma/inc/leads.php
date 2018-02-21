@@ -14,7 +14,7 @@ class kmaLeads {
 
         //class init
 
-    } 
+    }
 
     public function __get($varName){
 
@@ -42,7 +42,7 @@ class kmaLeads {
             'fileinfo' => ''
         ),
         $emailTemplate = ''
-        
+
     ){
 
         $eol = "\r\n";
@@ -132,7 +132,7 @@ class kmaLeads {
             $emailcontent .= $templatebot . $eol . $eol;
         }
 
-        mail( $sendadmin['to'], $sendadmin['subject'], $emailcontent, $headers );
+        wp_mail( $sendadmin['to'], $sendadmin['subject'], $emailcontent, $headers );
 
     }
 

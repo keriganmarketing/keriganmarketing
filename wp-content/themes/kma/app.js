@@ -3821,6 +3821,10 @@ window.handleTeam = function () {
         $(".grayscale").gray();
     });
 };
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(90)))
 
 /***/ }),

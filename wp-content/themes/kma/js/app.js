@@ -114,3 +114,7 @@ window.handleTeam = function () {
         $(".grayscale").gray();
     });
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+})

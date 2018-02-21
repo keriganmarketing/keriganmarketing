@@ -20,7 +20,7 @@ get_header(); ?>
             $post = get_post(11);
             $article_id = $post->ID;
             $thumb_id = get_post_thumbnail_id( $article_id );
-            $thumb = wp_get_attachment_image_src( $thumb_id, 'large'); 
+            $thumb = wp_get_attachment_image_src( $thumb_id, 'large');
             $thumb_url = $thumb[0];
 
             if(get_field('headline')!=''){
@@ -57,13 +57,13 @@ get_header(); ?>
                     <div class="col-lg-10 offset-lg-1" >
                         <div class="entry-content">
 
-                            
+
                             <div class="row align-items-center">
                                 <div class="col-md-6">
                                     <h2>Website Design & Hosting</h2>
                                     <?php //echo term_description( 50, 'service_category' ) ?>
                                 </div>
-                                <div class="col-md-6">   
+                                <div class="col-md-6">
                                     <ul>
                                     <?php
                                     $args = array(
@@ -80,7 +80,7 @@ get_header(); ?>
                                     );
 
 
-                                    $query1 = new WP_Query( $args );    
+                                    $query1 = new WP_Query( $args );
                                     if ( $query1->have_posts() ) {
                                         // The Loop
                                         while ( $query1->have_posts() ) {
@@ -89,7 +89,7 @@ get_header(); ?>
 
                                             $isEnabled = get_field('enable_link',$query1->post->ID);
                                             $serviceName = $query1->post->post_title;
-                                            $serviceLink = get_permalink($query1->post->ID);	
+                                            $serviceLink = get_permalink($query1->post->ID);
 
                                             if($isEnabled === TRUE){ ?>
                                                 <li class="service-link col-sm-6 col-md-12"><a href="<?php echo $serviceLink; ?>" class="service-link" ><?php echo $serviceName; ?></a></li>
@@ -98,13 +98,13 @@ get_header(); ?>
 
                                         <li class="service-link col-sm-6 col-md-12" ><span><?php echo $serviceName; ?></span></li>
 
-                                            <?php } 
+                                            <?php }
 
                                         }
 
-                                        /* Restore original Post Data 
-                                         * NB: Because we are using new WP_Query we aren't stomping on the 
-                                         * original $wp_query and it does not need to be reset with 
+                                        /* Restore original Post Data
+                                         * NB: Because we are using new WP_Query we aren't stomping on the
+                                         * original $wp_query and it does not need to be reset with
                                          * wp_reset_query(). We just need to set the post data back up with
                                          * wp_reset_postdata().
                                          */
@@ -115,15 +115,15 @@ get_header(); ?>
                                 </div>
                             </div>
                             <hr>
-                            
+
                             <div class="row align-items-center">
                                 <div class="col-md-6">
-                                    <h2>Brand Development</h2> 
+                                    <h2>Brand Development</h2>
                                     <?php //echo term_description( 51, 'service_category' ) ?>
                                 </div>
                                 <div class="col-md-6">
                                     <ul>
-                                    <?php  
+                                    <?php
                                     $args2 = array(
                                         'post_type' => 'service',
                                         'orderby' => 'menu_order',
@@ -146,8 +146,8 @@ get_header(); ?>
 
                                             $isEnabled = get_field('enable_link',$query2->post->ID);
                                             $serviceName = $query2->post->post_title;
-                                            $serviceLink = get_permalink($query2->post->ID);	
-                                            
+                                            $serviceLink = get_permalink($query2->post->ID);
+
                                             if($isEnabled === TRUE){ ?>
                                                 <li class="service-link col-sm-6 col-md-12"><a href="<?php echo $serviceLink; ?>" class="service-link" ><?php echo $serviceName; ?></a></li>
 
@@ -155,7 +155,7 @@ get_header(); ?>
 
                                                 <li class="service-link col-sm-6 col-md-12" ><span><?php echo $serviceName; ?></span></li>
 
-                                            <?php } 
+                                            <?php }
 
                                         }
 
@@ -167,7 +167,7 @@ get_header(); ?>
                                 </div>
                             </div>
                             <hr>
-                            
+
                             <div class="row align-items-center">
                                 <div class="col-md-6">
                                     <h2>Media & Production</h2>
@@ -198,7 +198,7 @@ get_header(); ?>
 
                                             $isEnabled = get_field('enable_link',$query3->post->ID);
                                             $serviceName = $query3->post->post_title;
-                                            $serviceLink = get_permalink($query3->post->ID);	
+                                            $serviceLink = get_permalink($query3->post->ID);
 
                                             if($isEnabled === TRUE){ ?>
                                                 <li class="service-link col-sm-6 col-md-12"><a href="<?php echo $serviceLink; ?>" class="service-link" ><?php echo $serviceName; ?></a></li>
@@ -207,7 +207,7 @@ get_header(); ?>
 
                                                 <li class="service-link col-sm-6 col-md-12" ><span><?php echo $serviceName; ?></span></li>
 
-                                            <?php } 
+                                            <?php }
 
                                         }
 
@@ -222,7 +222,7 @@ get_header(); ?>
                     </div>
                 </div>
             </div>
-            </article><!-- #post-## --> 
+            </article><!-- #post-## -->
 		 </main><!-- #main -->
 	</div><!-- #primary -->
 </div>
