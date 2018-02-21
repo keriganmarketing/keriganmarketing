@@ -21,6 +21,7 @@
     "font-awesome": "^4.7.0",
     "glob": "^7.1.2",
     "jquery": "^2.1.0",
+    "jquery-gray": "^1.6.0",
     "purgecss-webpack-plugin": "^0.20.0",
     "tether": "^1.4.0"
   }

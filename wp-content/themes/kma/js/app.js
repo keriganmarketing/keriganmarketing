@@ -27,7 +27,7 @@ window.loadVideo = function () {
         '</div>' +
         '</div>';
     $('#video-container').html(videoContent);
-    window.setTimeout(function(){
+    window.setTimeout(function () {
         $('.mast-content').addClass('reveal')
     }, 500);
 };
@@ -101,3 +101,16 @@ window.handleClickDown = function () {
         }, 1000);
     });
 };
+
+window.handleTeam = function () {
+    $(".grayscale").hover(
+        function () {
+            $(this).addClass('grayscale-off');
+        }, function () {
+            $(".grayscale").gray();
+        }
+    );
+    $(function () {
+        $(".grayscale").gray();
+    });
+}

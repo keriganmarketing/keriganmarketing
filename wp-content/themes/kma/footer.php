@@ -1,11 +1,5 @@
 <?php
 /**
- * The template for displaying the footer.
- *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
  * @package Seriously_Creative
  */
 if ($isArchive != '' || get_queried_object_id() == 0) {
@@ -45,13 +39,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
         <div class="row text-center justify-content-center">
             <div class="col-xs-5 col-sm-4 col-md-3 col-lg-2 col-xl-1">
                 <svg id="kma" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.31 8.42">
-                    <defs>
-                        <style>.cls-1 {
-                                opacity: 0.38;
-                            }</style>
-                    </defs>
-                    <title>kma-triangle2</title>
-                    <path class="cls-1"
+                    <path class="cls-1" style="opacity: 0.38;"
                           d="M6.33,0H6A12.49,12.49,0,0,1,4,4.37,20.67,20.67,0,0,1,0,8l.29.42A18.36,18.36,0,0,1,6.15,7.25,18.36,18.36,0,0,1,12,8.42L12.31,8a20,20,0,0,1-4-3.64A11.72,11.72,0,0,1,6.33,0Z"/>
                 </svg>
             </div>
@@ -116,55 +104,34 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
             handleHomeHeader();
         <?php } else { ?>
             $("#scrollbg").addClass("show").removeClass("hide");
+            handleStickyFooter();
         <?php } ?>
 
         <?php if(is_front_page() || $post->post_parent == 8){ //home or client page ?>
-        handleClickDown();
+            handleClickDown();
         <?php } ?>
 
         <?php if($post->ID == 351){ // Hosting page ?>
-        $('[data-toggle="tooltip"]').tooltip()
+            $('[data-toggle="tooltip"]').tooltip();
         <?php } ?>
 
         <?php if($post->ID == 13){ // Team page ?>
-
+            handleTeam();
         <?php } ?>
 
         <?php if($post->ID == 437){ //Tyndall page ?>
-        $('a.toggler').on('click', function (event) {
-            event.preventDefault();
-            var frame = $('.ad-container iframe'),
-                link = $(this).attr('data-source');
+            $('a.toggler').on('click', function (event) {
+                event.preventDefault();
+                let frame = $('.ad-container iframe'),
+                    link = $(this).attr('data-source');
 
-            frame.attr('src', link);
-            $('a.toggler').removeClass('active');
-            $(this).addClass('active');
-        });
+                frame.attr('src', link);
+                $('a.toggler').removeClass('active');
+                $(this).addClass('active');
+            });
         <?php } ?>
     });
 </script>
-
-<?php if ($post->ID == 13) { // Team page ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/grayjs/js/jquery.gray.min.js"></script>
-    <script>
-        (function ($) {
-            $(document).ready(function () {
-                $(".grayscale").hover(
-                    function () {
-                        $(this).addClass('grayscale-off');
-                    }, function () {
-                        $(".grayscale").gray();
-                    }
-                );
-                $(function () {
-                    $(".grayscale").gray();
-                });
-
-            });
-        })(jQuery);
-    </script>
-<?php } ?>
 
 <script>
     (function (i, s, o, g, r, a, m) {
