@@ -104,7 +104,8 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                     <div class="row">
                         <label for="expiration_month"></label>
                         <div class="form-group col-6">
-                            <select name="expiration_month" id="expiration_month" class="small-field form-control" required>
+                            <select name="expiration_month" id="expiration_month" class="small-field form-control"
+                                    required>
                                 <?php for ($i = 1; $i <= 12; $i++) {
                                     $month = (strlen($i) == 1 ? '0' . $i : $i); ?>
                                     <option value="<?php echo $month; ?>"><?php echo $month; ?></option>
@@ -113,7 +114,8 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                         </div>
                         <label for="expiration_year"></label>
                         <div class="form-group col-6">
-                            <select name="expiration_year" id="expiration_year" class="small-field form-control" required>
+                            <select name="expiration_year" id="expiration_year" class="small-field form-control"
+                                    required>
                                 <?php for ($i = date("Y"); $i < date("Y", strtotime(date("Y") . " +10 years")); $i++) {
                                     echo '<option value="' . $i . '" >' . $i . '</option>';
                                 } ?>
@@ -137,7 +139,7 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                     <label class="label" for="billing_name">Name on Card: </label>
                     <div class="form-group">
                         <input name="billing_name" id="billing_name" type="text" class="input long-field form-control"
-                               value="<?php echo $billingName; ?>" required />
+                               value="<?php echo $billingName; ?>" required/>
                     </div>
                 </div>
 
@@ -152,28 +154,28 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                     <div class="form-group">
                         <label class="label" for="first_name">First Name: </label>
                         <input name="first_name" id="first_name" type="text" class="input long-field form-control"
-                               value="<?php echo $firstName; ?>" required />
+                               value="<?php echo $firstName; ?>" required/>
                     </div>
                 </div>
                 <div class="col-md-6 text-left">
                     <div class="form-group">
                         <label class="label" for="last_name">Last Name: </label>
                         <input name="last_name" id="last_name" type="text" class="input long-field form-control"
-                               value="<?php echo $lastName; ?>" required />
+                               value="<?php echo $lastName; ?>" required/>
                     </div>
                 </div>
                 <div class="col-md-6 text-left">
                     <div class="form-group">
                         <label class="label" for="email_address">E-mail: </label>
                         <input name="email_address" id="email_address" type="text" class="input long-field form-control"
-                               value="<?php echo $emailAddress; ?>" required />
+                               value="<?php echo $emailAddress; ?>" required/>
                     </div>
                 </div>
                 <div class="col-md-6 text-left">
                     <div class="form-group">
                         <label class="label" for="company">Company Name: (optional)</label>
                         <input name="company" id="company" type="text" class="input long-field form-control"
-                               value="<?php echo $company; ?>" required />
+                               value="<?php echo $company; ?>" required/>
                     </div>
                 </div>
 
@@ -182,7 +184,7 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                         <label class="label" for="billing_address">Address: </label>
                         <input name="billing_address" id="billing_address" type="text"
                                class="input long-field form-control"
-                               value="<?php echo $billingAddress; ?>" required />
+                               value="<?php echo $billingAddress; ?>" required/>
                     </div>
                 </div>
 
@@ -190,14 +192,14 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                     <div class="form-group">
                         <label class="label" for="billing_city">City: </label>
                         <input name="billing_city" id="billing_city" type="text" class="input long-field form-control"
-                               value="<?php echo $billingCity; ?>" required />
+                               value="<?php echo $billingCity; ?>" required/>
                     </div>
                 </div>
                 <div class="col-md-4 text-left">
                     <label class="label" for="billing_state">State/Province: </label>
                     <div class="form-group">
                         <select name="billing_state" id="billing_state"
-                                class="long-field form-control" required >
+                                class="long-field form-control" required>
                             <?php include('inc/state-select.php'); ?>
                         </select>
                     </div>
@@ -206,14 +208,14 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                     <div class="form-group">
                         <label class="label" for="billing_zip">ZIP/Postal Code: </label>
                         <input name="billing_zip" id="billing_zip" type="text" class="input small-field form-control"
-                               value="<?php echo $billingZip; ?>" required />
+                               value="<?php echo $billingZip; ?>" required/>
                     </div>
                 </div>
                 <div class="col-md-4 text-left">
                     <label class="label" for="billing_country">Country: </label>
                     <div class="form-group">
                         <select name="billing_country" id="billing_country"
-                                class="long-field form-control" required >
+                                class="long-field form-control" required>
                             <?php include('inc/country-select.php'); ?>
                         </select>
                     </div>
