@@ -79,7 +79,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
             <div class="col">
                 <footer id="colophon" class="site-footer" role="contentinfo">
                     <div class="site-info text-center">
-                        <p class="copyright">&copy;<?php echo date('Y'); ?> Kerigan Marketing Associates</p>
+                        <p class="copyright">&copy;<?php echo date('Y'); ?> Kerigan Marketing Associates | <a href="/privacy-policy/" >Privacy Policy</a></p>
                     </div><!-- .site-info -->
                 </footer><!-- #colophon -->
             </div>
