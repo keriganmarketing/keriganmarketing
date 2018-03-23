@@ -9,7 +9,7 @@
   },
   "require": {
     "guzzlehttp/guzzle": "^6.3",
-    "kerigansolutions/facebookfeed": "^0.14.0",
-    "kerigansolutions/cpt": "^0.2.0"
+    "kerigansolutions/cpt": "^0.2.0",
+    "kerigansolutions/fb-autoblog-wp": "dev-master"
   }
 }

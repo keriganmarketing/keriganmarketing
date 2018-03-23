@@ -7,10 +7,14 @@
  * @package Seriously_Creative
  */
 
-use KeriganSolutions\CPT\CustomPostType;
 use Includes\Modules\Helpers\CleanWP;
+use KeriganSolutions\CPT\CustomPostType;
+use Includes\Modules\KMAFacebook\FacebookController;
 
 require('vendor/autoload.php');
+
+$facebook = new FacebookController();
+$facebook->setupAdmin();
 
 require_once('inc/leads.php'); //Include kmaLeads class
 require_once('inc/honeypot.php'); //Include Akismet class
