@@ -286,11 +286,13 @@ get_header(); ?>
                 $facebook = new FacebookController();
                 $feed = $facebook->getFeed(4);
 
+                //echo '<pre>',print_r($feed),'</pre>';
+
                 foreach ($feed->posts as $fbPost) {
 
                     $isVideo  = ($fbPost->type == 'video');
                     $hasImage = ($fbPost->full_picture != '' && $isVideo == false);
-                    $date     = date('M j') . ' at ' . date('g:i a');
+                    $date     = date('M j',strtotime($fbPost->created_time)) . ' at ' . date('g:i a',strtotime($fbPost->created_time));
 
                     ?>
 
@@ -315,7 +317,7 @@ get_header(); ?>
                             </div>
                             <div class="article-intro">
                                 <p><small>Posted on <?= $date; ?></small></p>
-                                <p class="intro"><?php echo wp_trim_words($fbPost->message, 20, '...'); ?></p>
+                                <p class="intro"><?php echo wp_trim_words($fbPost->message, 28, '...'); ?></p>
                                 <p class="read-more">Read More</p>
                             </div>
                             <a href="<?= $fbPost->permalink_url; ?>" target="_blank" class="article-box-link"></a>
