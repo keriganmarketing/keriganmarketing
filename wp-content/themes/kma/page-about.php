@@ -26,7 +26,7 @@ while ( have_posts() ) : the_post(); ?>
 			<?php
 				get_template_part( 'template-parts/content', 'page' );
 			?>
-          
+
           <div id="team-section-container">
               <div id="team-section">
               <div class="container">
@@ -50,7 +50,7 @@ while ( have_posts() ) : the_post(); ?>
                   <div class="row">
                       <div class="offset-xl-1 col-xl-10">
                           <div class="row align-items-center">
-                            
+
                             <?php
                             $args = array(
                                 'numberposts' => -1,
@@ -69,7 +69,7 @@ while ( have_posts() ) : the_post(); ?>
 
                             $team = get_posts( $args, ARRAY_A );
 
-                            foreach($team as $member){ 
+                            foreach($team as $member){
                                 $member_id = $member->ID;
                                 $name = $member->post_title;
                                 $headshot = get_field('headshot',$member_id);
@@ -91,7 +91,7 @@ while ( have_posts() ) : the_post(); ?>
                                 </div>
                             </div>
                             <?php } ?>
-                            
+
                           </div>
                       </div>
                   </div>
@@ -105,7 +105,7 @@ while ( have_posts() ) : the_post(); ?>
                           <div class="entry-content">
                               <div class="row align-items-center">
                                   <div class="col-md-3" >
-                                      <h2>Happy Clients</h2>
+                                      <h2>Clients We've Helped</h2>
                                       <p>&nbsp;</p>
                                   </div>
                                   <div class="col">
@@ -120,7 +120,7 @@ while ( have_posts() ) : the_post(); ?>
                   <div class="row no-gutter">
                       <div class="offset-xl-1 col-xl-10">
                           <div class="row align-items-center justify-content-center">
-                            
+
                             <?php
                             $args = array(
                                 'numberposts' => -1,
@@ -139,32 +139,32 @@ while ( have_posts() ) : the_post(); ?>
 
                             $clients = get_posts( $args, ARRAY_A );
 
-                            foreach($clients as $client){ 
+                            foreach($clients as $client){
                                 $client_id = $client->ID;
-                                $name = $client->post_title; 
+                                $name = $client->post_title;
                                 $clientlogo = get_field('client_logo',$client_id);
                                 $clientlink = get_field('client_link',$client_id);
                             ?>
                             <div class="client col-sm-6 col-md-4 col-lg-3 col-xl-2">
                                 <?php if($clientlink!=''){ ?><a href="<?php echo $clientlink; ?>" ><?php } ?>
-                                
+
                                 <div class="logo-container">
                                     <div class="logo text-center"><img src="<?php echo $clientlogo['url']; ?>" alt="<?php echo $name; ?>" class="img-fluid grayscale" ></div>
                                 </div>
-     
+
                                 <?php if($clientlink!=''){ ?></a><?php } ?>
                             </div>
                             <?php } ?>
-                            
+
                           </div>
                       </div>
                   </div>
-              </div>         
+              </div>
           </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 </div>
-<?php 
+<?php
 endwhile;
 get_footer();
