@@ -54,7 +54,6 @@ class ProcessPayment
             $response = $this->payInvoice($merchantAuthentication);
         }
         if ($this->inputFields['whatToPay'] == 'recurring-service') {
-            echo '<pre>', print_r($_POST), '</pre>';
             $response = $this->createRecurringPayment($merchantAuthentication);
         }
 
