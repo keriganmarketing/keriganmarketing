@@ -40,10 +40,10 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
 
                 ?>
                 <div class="col-md-6 text-left">
-                    <label class="label" for="service">Service:</label>
+                    <label class="label" for="service_name">Service:</label>
                     <div class="form-group">
                         <div class="select">
-                            <select id="service" name="service" class="select form-control">
+                            <select id="service_name" name="service_name" class="select form-control">
                                 <option value="">Select one</option>
                                 <?php echo $serviceOptions; ?>
                             </select>

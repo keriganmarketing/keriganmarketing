@@ -12,7 +12,7 @@ class FormValidation
     public function __construct()
     {
         $this->valid                             = true;
-        $this->inputFields['service']            = (isset($_REQUEST["service"]) ? $_REQUEST["service"] : null);
+        $this->inputFields['service_name']            = (isset($_REQUEST['service_name']) ? $_REQUEST['service_name'] : null);
         $this->inputFields['invoiceNumber']      = (isset($_REQUEST["invoice_number"]) ? $_REQUEST["invoice_number"] : null);
         $this->inputFields['serviceAmount']      = (isset($_REQUEST["service_amount"]) ? $_REQUEST["service_amount"] : null);
         $this->inputFields['serviceTerm']        = (isset($_REQUEST["service_term"]) ? $_REQUEST["service_term"] : null);
@@ -59,7 +59,7 @@ class FormValidation
                 $this->errors[] = 'You must enter an invoice number when paying an invoice.';
             }
         }elseif($this->inputFields['whatToPay'] == 'recurring-service'){
-            if ($this->inputFields['service'] == '') {
+            if ($this->inputFields['service_name'] == '') {
                 $this->valid    = false;
                 $this->errors[] = 'You must select a service.';
             }

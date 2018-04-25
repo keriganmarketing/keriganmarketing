@@ -18,7 +18,7 @@ class ProcessPayment
 
     public function __construct()
     {
-        $this->inputFields['service']            = (isset($_REQUEST["service"]) ? $_REQUEST["service"] : null);
+        $this->inputFields['service_name']            = (isset($_REQUEST['service_name']) ? $_REQUEST['service_name'] : null);
         $this->inputFields['invoiceNumber']      = (isset($_REQUEST["invoice_number"]) ? $_REQUEST["invoice_number"] : null);
         $this->inputFields['serviceAmount']      = (isset($_REQUEST["service_amount"]) ? $_REQUEST["service_amount"] : null);
         $this->inputFields['serviceTerm']        = (isset($_REQUEST["service_term"]) ? $_REQUEST["service_term"] : null);
@@ -211,7 +211,7 @@ class ProcessPayment
 
         // Subscription Type Info
         $subscription = new AnetAPI\ARBSubscriptionType();
-        $subscription->setName($this->inputFields['service']);
+        $subscription->setName($this->inputFields['service_name']);
         $interval = new AnetAPI\PaymentScheduleType\IntervalAType();
         $interval->setLength($this->inputFields['serviceTerm']);
         $interval->setUnit($this->inputFields['serviceTermType']);
@@ -232,7 +232,7 @@ class ProcessPayment
         $subscription->setPayment($payment);
         $order = new AnetAPI\OrderType();
         //$order->setInvoiceNumber("1234354");
-        $order->setDescription($this->inputFields['service']);
+        $order->setDescription($this->inputFields['service_name']);
         $subscription->setOrder($order);
 
         $billTo = new AnetAPI\NameAndAddressType();

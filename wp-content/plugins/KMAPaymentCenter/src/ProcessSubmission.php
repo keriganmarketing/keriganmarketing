@@ -28,7 +28,7 @@ class ProcessSubmission
         }
         if ($message['type'] == 'recurring payment') {
             echo $message['details']['description'] . ' You will receive an email receipt and your subdcription ID is ' . $message['details']['subscription_id'];
-            $payment = $message['payment_info']['inputFields']['service'] . ' ($'. number_format($message['payment_info']['inputFields']['serviceAmount']) . ' recurring)';
+            $payment = $message['payment_info']['inputFields']['service_name'] . ' ($'. number_format($message['payment_info']['inputFields']['serviceAmount']) . ' recurring)';
         }
         echo '</div>';
 
