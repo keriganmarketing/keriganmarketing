@@ -3,7 +3,7 @@ wp_enqueue_script('payment-form-scripts', '/wp-content/plugins/KMAPaymentCenter/
 wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/form-style.css', [], null, 'all');
 ?>
 <a name="form-submit-anchor" class="pad-anchor top"></a>
-<form method="post" action="#form-submit-anchor" enctype="multipart/form-data" style="padding: 0 1rem;">
+<form method="post" enctype="multipart/form-data" style="padding: 0 1rem;">
     <div class="row justify-content-center align-items-center">
 
         <div class="pane col-lg-10 col-xl-8">
