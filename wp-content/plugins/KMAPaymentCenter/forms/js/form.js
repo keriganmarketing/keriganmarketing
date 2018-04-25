@@ -3,7 +3,7 @@
         let whattopay = $('#what_to_pay'),
             payinvoice = $('#payinvoice'),
             recurringservice = $('#recurringservice'),
-            serviceinput = $('#service');
+            serviceinput = $('#service_name');
 
         if (whattopay.val() !== '') {
             changeType(whattopay)
@@ -35,7 +35,7 @@
         });
 
         function setTermValues() {
-            let source = $('#service')[0],
+            let source = $('#service_name')[0],
                 key = source.value;
 
             let id = source.options[key].dataset.id,
