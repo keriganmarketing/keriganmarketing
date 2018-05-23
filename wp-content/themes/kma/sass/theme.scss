@@ -487,7 +487,7 @@ ul {
   padding-top: 30px;
 }
 
-.nav-social, .social a {
+.nav-social, .social.share a {
   display: inline-block !important;
   height: 30px;
   width: 30px;
@@ -508,7 +508,7 @@ ul {
   background-color: transparent;
 }
 
-.social {
+.social.share {
   .googleplus {
     background-position: -79px 5px;
   }
@@ -521,7 +521,7 @@ ul {
   background-position: 10px 5px;
 }
 
-.social {
+.social.share {
   .facebook {
     background-position: 10px 5px;
   }
@@ -530,7 +530,7 @@ ul {
   }
 }
 
-.nav-social.youtube, .social .youtube {
+.nav-social.youtube, .social.share .youtube {
   background-position: -126px 5px;
 }
 
@@ -539,7 +539,7 @@ ul {
   background-size: auto 316%;
 }
 
-.social .linkedin {
+.social.share .linkedin {
   background-position: -289px 5px;
   background-size: auto 303%;
 }
@@ -549,7 +549,7 @@ ul {
   background-size: auto 303%;
 }
 
-.social {
+.social.share {
   a:hover {
     /*-webkit-filter: grayscale(100%); filter: grayscale(100%);*/
     /*-webkit-filter: sepia(100%); filter: sepia(100%);*/

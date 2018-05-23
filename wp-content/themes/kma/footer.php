@@ -1,4 +1,7 @@
 <?php
+
+use Includes\Modules\Social\SocialSettingsPage;
+
 /**
  * @package Seriously_Creative
  */
@@ -61,10 +64,12 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
                     </div>
                     <div class="social">
                         <?php
-                        //print_r(getSocialLinks());
-                        $socialLinks = getSocialLinks();
-                        foreach ($socialLinks as $socialId => $socialLink) {
-                            echo '<a class="' . $socialId . '" href="' . $socialLink . '" target="_blank" ></a>';
+                        $socialLinks = new SocialSettingsPage();
+                        $socialIcons = $socialLinks->getSocialLinks('svg', 'shape');
+                        if (is_array($socialIcons)) {
+                            foreach ($socialIcons as $socialId => $socialLink) {
+                                echo '<a class="' . $socialId . '" href="' . $socialLink[0] . '" target="_blank" >' . $socialLink[1] . '</a>';
+                            }
                         }
                         ?>
                     </div>

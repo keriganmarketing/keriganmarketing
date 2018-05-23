@@ -9,6 +9,7 @@
 
 use Includes\Modules\Helpers\CleanWP;
 use KeriganSolutions\CPT\CustomPostType;
+use Includes\Modules\Social\SocialSettingsPage;
 use Includes\Modules\KMAFacebook\FacebookController;
 
 require('vendor/autoload.php');
@@ -18,6 +19,11 @@ $facebook->setupAdmin();
 
 require_once('inc/leads.php'); //Include kmaLeads class
 require_once('inc/honeypot.php'); //Include Akismet class
+
+$socialLinks = new SocialSettingsPage();
+if (is_admin()) {
+    $socialLinks->createPage();
+}
 
 if ( ! function_exists('kma_setup')) :
     /**
