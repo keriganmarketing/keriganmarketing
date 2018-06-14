@@ -150,9 +150,9 @@ class ProcessPayment
                     $message['details']  = [
                             'transaction_id' => $tresponse->getTransId(),
                             'response_code'  => $tresponse->getResponseCode(),
-                            //'message_code'   => $tresponse->getMessages()->getCode(),
+                            'message_code'   => $tresponse->getMessages()->getCode(),
                             'auth_code'      => $tresponse->getAuthCode(),
-                            'description'    => $tresponse->getMessages()[0]->getDescription(),
+                            'description'    => $tresponse->getMessages()->getDescription(),
                         ];
                     $message['payment_info'] = [
                         'requiredFields' => $this->requiredFields,
