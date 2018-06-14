@@ -374,130 +374,81 @@
         ]
     },
     {
-        "name": "goetas-webservices/xsd2php-runtime",
-        "version": "v0.2.7",
-        "version_normalized": "0.2.7.0",
+        "name": "symfony/polyfill-ctype",
+        "version": "v1.8.0",
+        "version_normalized": "1.8.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/goetas-webservices/xsd2php-runtime.git",
-            "reference": "f62d40ad91502576d252f80143f9c0bf1a46ceec"
+            "url": "https://github.com/symfony/polyfill-ctype.git",
+            "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/goetas-webservices/xsd2php-runtime/zipball/f62d40ad91502576d252f80143f9c0bf1a46ceec",
-            "reference": "f62d40ad91502576d252f80143f9c0bf1a46ceec",
+            "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
+            "reference": "7cc359f1b7b80fc25ed7796be7d96adc9b354bae",
             "shasum": ""
         },
         "require": {
-            "jms/serializer": "^1.2",
-            "php": ">=5.5",
-            "symfony/yaml": "^2.2|^3.0"
+            "php": ">=5.3.3"
         },
-        "conflict": {
-            "jms/serializer": "1.4.1|1.6.1|1.6.2"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "^4.8|^5.0"
-        },
-        "time": "2017-05-05T14:58:17+00:00",
+        "time": "2018-04-30T19:57:29+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "0.2-dev"
+                "dev-master": "1.8-dev"
             }
         },
         "installation-source": "dist",
         "autoload": {
             "psr-4": {
-                "GoetasWebservices\\Xsd\\XsdToPhpRuntime\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL"
-        ],
-        "authors": [
-            {
-                "name": "Asmir Mustafic"
-            }
-        ],
-        "description": "Convert XSD  (XML Schema) definitions into PHP classes",
-        "keywords": [
-            "converter",
-            "jms",
-            "php",
-            "serializer",
-            "xml",
-            "xsd"
-        ]
-    },
-    {
-        "name": "authorizenet/authorizenet",
-        "version": "1.9.4",
-        "version_normalized": "1.9.4.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/AuthorizeNet/sdk-php.git",
-            "reference": "3d816a1ab7e0f5a3d285d6419fdb6d2b39e166a1"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/AuthorizeNet/sdk-php/zipball/3d816a1ab7e0f5a3d285d6419fdb6d2b39e166a1",
-            "reference": "3d816a1ab7e0f5a3d285d6419fdb6d2b39e166a1",
-            "shasum": ""
-        },
-        "require": {
-            "ext-curl": "*",
-            "ext-json": "*",
-            "ext-simplexml": "*",
-            "ext-xmlwriter": "*",
-            "goetas-webservices/xsd2php-runtime": "^0.2.2",
-            "php": ">=5.6"
-        },
-        "require-dev": {
-            "phpmd/phpmd": "~2.0",
-            "phpunit/phpunit": "~4.0"
-        },
-        "time": "2017-11-17T06:59:02+00:00",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "lib"
+                "Symfony\\Polyfill\\Ctype\\": ""
+            },
+            "files": [
+                "bootstrap.php"
             ]
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "proprietary"
+            "MIT"
         ],
-        "description": "Official PHP SDK for Authorize.Net",
-        "homepage": "http://developer.authorize.net",
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            },
+            {
+                "name": "Gert de Pagter",
+                "email": "BackEndTea@gmail.com"
+            }
+        ],
+        "description": "Symfony polyfill for ctype functions",
+        "homepage": "https://symfony.com",
         "keywords": [
-            "authorize.net",
-            "authorizenet",
-            "ecommerce",
-            "payment"
+            "compatibility",
+            "ctype",
+            "polyfill",
+            "portable"
         ]
     },
     {
         "name": "jms/serializer",
-        "version": "1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "1.12.1",
+        "version_normalized": "1.12.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/schmittjoh/serializer.git",
-            "reference": "e7c53477ff55c21d1b1db7d062edc050a24f465f"
+            "reference": "93d6e03fcb71d45854cc44b5a84d645c02c5d763"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/e7c53477ff55c21d1b1db7d062edc050a24f465f",
-            "reference": "e7c53477ff55c21d1b1db7d062edc050a24f465f",
+            "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/93d6e03fcb71d45854cc44b5a84d645c02c5d763",
+            "reference": "93d6e03fcb71d45854cc44b5a84d645c02c5d763",
             "shasum": ""
         },
         "require": {
             "doctrine/annotations": "^1.0",
             "doctrine/instantiator": "^1.0.3",
-            "jms/metadata": "~1.1",
+            "jms/metadata": "^1.3",
             "jms/parser-lib": "1.*",
             "php": "^5.5|^7.0",
             "phpcollection/phpcollection": "~0.1",
@@ -528,11 +479,11 @@
             "doctrine/collections": "Required if you like to use doctrine collection types as ArrayCollection.",
             "symfony/yaml": "Required if you'd like to serialize data to YAML format."
         },
-        "time": "2018-02-04T17:48:54+00:00",
+        "time": "2018-06-01T12:10:12+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "1.11-dev"
+                "dev-1.x": "1.11-dev"
             }
         },
         "installation-source": "dist",
@@ -543,7 +494,7 @@
         },
         "notification-url": "https://packagist.org/downloads/",
         "license": [
-            "Apache-2.0"
+            "MIT"
         ],
         "authors": [
             {
@@ -567,21 +518,22 @@
     },
     {
         "name": "symfony/yaml",
-        "version": "v3.4.4",
-        "version_normalized": "3.4.4.0",
+        "version": "v4.1.0",
+        "version_normalized": "4.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/yaml.git",
-            "reference": "eab73b6c21d27ae4cd037c417618dfd4befb0bfe"
+            "reference": "80e4bfa9685fc4a09acc4a857ec16974a9cd944e"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/eab73b6c21d27ae4cd037c417618dfd4befb0bfe",
-            "reference": "eab73b6c21d27ae4cd037c417618dfd4befb0bfe",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/80e4bfa9685fc4a09acc4a857ec16974a9cd944e",
+            "reference": "80e4bfa9685fc4a09acc4a857ec16974a9cd944e",
             "shasum": ""
         },
         "require": {
-            "php": "^5.5.9|>=7.0.8"
+            "php": "^7.1.3",
+            "symfony/polyfill-ctype": "~1.8"
         },
         "conflict": {
             "symfony/console": "<3.4"
@@ -592,11 +544,11 @@
         "suggest": {
             "symfony/console": "For validating YAML files using the lint command"
         },
-        "time": "2018-01-21T19:05:02+00:00",
+        "time": "2018-05-30T07:26:09+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "3.4-dev"
+                "dev-master": "4.1-dev"
             }
         },
         "installation-source": "dist",
@@ -624,5 +576,111 @@
         ],
         "description": "Symfony Yaml Component",
         "homepage": "https://symfony.com"
+    },
+    {
+        "name": "goetas-webservices/xsd2php-runtime",
+        "version": "v0.2.8",
+        "version_normalized": "0.2.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/goetas-webservices/xsd2php-runtime.git",
+            "reference": "18a9e25e89b719fa5417dcbd6515604723df957d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/goetas-webservices/xsd2php-runtime/zipball/18a9e25e89b719fa5417dcbd6515604723df957d",
+            "reference": "18a9e25e89b719fa5417dcbd6515604723df957d",
+            "shasum": ""
+        },
+        "require": {
+            "jms/serializer": "^1.2",
+            "php": ">=5.5",
+            "symfony/yaml": "^2.2|^3.0|^4.0"
+        },
+        "conflict": {
+            "jms/serializer": "1.4.1|1.6.1|1.6.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8|^5.0"
+        },
+        "time": "2018-03-16T09:41:04+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GoetasWebservices\\Xsd\\XsdToPhpRuntime\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Asmir Mustafic"
+            }
+        ],
+        "description": "Convert XSD  (XML Schema) definitions into PHP classes",
+        "keywords": [
+            "converter",
+            "jms",
+            "php",
+            "serializer",
+            "xml",
+            "xsd"
+        ]
+    },
+    {
+        "name": "authorizenet/authorizenet",
+        "version": "1.9.7",
+        "version_normalized": "1.9.7.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/AuthorizeNet/sdk-php.git",
+            "reference": "1e0977992801b3aa5d9d9c311d69258c2255e442"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/AuthorizeNet/sdk-php/zipball/1e0977992801b3aa5d9d9c311d69258c2255e442",
+            "reference": "1e0977992801b3aa5d9d9c311d69258c2255e442",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-simplexml": "*",
+            "ext-xmlwriter": "*",
+            "goetas-webservices/xsd2php-runtime": "^0.2.2",
+            "php": ">=5.6"
+        },
+        "require-dev": {
+            "phpmd/phpmd": "~2.0",
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2018-06-14T10:34:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Official PHP SDK for Authorize.Net",
+        "homepage": "http://developer.authorize.net",
+        "keywords": [
+            "authorize.net",
+            "authorizenet",
+            "ecommerce",
+            "payment"
+        ]
     }
 ]

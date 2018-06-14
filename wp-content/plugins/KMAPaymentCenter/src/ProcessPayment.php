@@ -63,8 +63,7 @@ class ProcessPayment
     protected function getMerchantCredentials()
     {
         $pluginConfig           = new PluginConfig();
-        $processorConfig        = $pluginConfig->setTerminalState($pluginConfig->getVar('processorConfig'),
-            'default');
+        $processorConfig        = $pluginConfig->setTerminalState($pluginConfig->getVar('processorConfig'), 'default');
         $TestMode               = (get_option('kmapc_test') != 2 ? 'TEST' : 'LIVE'); // 1=on; 2=off;
         $merchantCredentials    = $processorConfig['AUTHORIZE'][$TestMode];
         $merchantAuthentication = new AnetAPI\MerchantAuthenticationType();
@@ -133,7 +132,11 @@ class ProcessPayment
 
         // Create the controller and get the response
         $controller = new AnetController\CreateTransactionController($request);
-        $response   = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
+        if($TestMode == 'TEST'){
+            $response   = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
+        }else{
+            $response   = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
+        }
 
         if ($response != null) {
             // Check to see if the API request was successfully received and acted upon
@@ -243,7 +246,12 @@ class ProcessPayment
         $request->setRefId($refId);
         $request->setSubscription($subscription);
         $controller = new AnetController\ARBCreateSubscriptionController($request);
-        $response   = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
+
+        if($TestMode == 'TEST'){
+            $response   = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::SANDBOX);
+        }else{
+            $response   = $controller->executeWithApiResponse(\net\authorize\api\constants\ANetEnvironment::PRODUCTION);
+        }
 
         if (($response != null) && ($response->getMessages()->getResultCode() == "Ok")) {
             return [

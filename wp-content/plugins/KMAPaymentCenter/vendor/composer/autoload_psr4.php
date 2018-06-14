@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'KMAPaymentCenter\\' => array($baseDir . '/src'),
     'GoetasWebservices\\Xsd\\XsdToPhpRuntime\\' => array($vendorDir . '/goetas-webservices/xsd2php-runtime/src'),

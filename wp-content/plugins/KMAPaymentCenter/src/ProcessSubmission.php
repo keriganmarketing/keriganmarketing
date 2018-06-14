@@ -24,20 +24,28 @@ class ProcessSubmission
         echo '<div class="alert alert-success text-left" role="alert" >';
         if ($message['type'] == 'single payment') {
             echo $message['details']['description'] . ' You will receive an email receipt and your transaction ID is ' . $message['details']['transaction_id'];
-            $payment = 'invoice ' . $message['payment_info']['inputFields']['invoiceNumber'] . ' ($'. number_format($message['payment_info']['inputFields']['invoiceAmount']) . ')';
-        }
-        if ($message['type'] == 'recurring payment') {
-            echo $message['details']['description'] . ' You will receive an email receipt and your subdcription ID is ' . $message['details']['subscription_id'];
-            $payment = $message['payment_info']['inputFields']['service_name'] . ' ($'. number_format($message['payment_info']['inputFields']['serviceAmount']) . ' recurring)';
-        }
-        echo '</div>';
 
-        $data = '<table style="width: 100%" border="0" class="data">
-                    <tr><td width="20%"><strong>Paid For</strong></td><td>'.$payment.'</td></tr>
+            $data = '<table style="width: 100%" border="0" class="data">
+                    <tr><td width="20%"><strong>Paid For</strong></td><td>invoice ' . $message['payment_info']['inputFields']['invoiceNumber'] . ' for $'. number_format($message['payment_info']['inputFields']['invoiceAmount']) . '</td></tr>
                     <tr><td><strong>First Name<strong></td><td>'.$message['payment_info']['requiredFields']['firstName'].'</td></tr>
                     <tr><td><strong>Last Name<strong></td><td>'.$message['payment_info']['requiredFields']['lastName'].'</td></tr>
                     <tr><td><strong>Company<strong></td><td>'.$message['payment_info']['requiredFields']['company'].'</td></tr>
                   </table>';
+
+        }
+        if ($message['type'] == 'recurring payment') {
+            echo $message['details']['description'] . ' You will receive an email receipt and your subdcription ID is ' . $message['details']['subscription_id'];
+            $payment = $_POST['service_title'] . ': $'. number_format($_POST['service_amount']).'<br>recurring every '.$_POST['service_term'].' '.$_POST['service_term_type'].' ';
+
+            $data = '<table style="width: 100%" border="0" class="data">
+                    <tr><td width="20%"><strong>Paid For</strong></td><td>'.$_POST['service_title'] . ': $'. number_format($_POST['service_amount']).'<br>
+                        recurring every '.$_POST['service_term'].' '.$_POST['service_term_type'].'</td></tr>
+                    <tr><td><strong>First Name<strong></td><td>'.$_POST['first_name'].'</td></tr>
+                    <tr><td><strong>Last Name<strong></td><td>'.$_POST['last_name'].'</td></tr>
+                    <tr><td><strong>Company<strong></td><td>'.$_POST['company'].'</td></tr>
+                  </table>';
+        }
+        echo '</div>';
 
         new Notifications([
             'to'      => 'bryan@kerigan.com',

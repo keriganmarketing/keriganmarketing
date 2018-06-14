@@ -41,8 +41,10 @@
             let id = source.options[key].dataset.id,
                 price = Number(source.options[key].dataset.price),
                 term = Number(source.options[key].dataset.term),
-                termtype = source.options[key].dataset.termType;
+                termtype = source.options[key].dataset.termType,
+                title = source.options[key].dataset.title;
 
+            $('#service_title').val(title);
             $('#service_amount').val(price.toFixed(2));
             $('#service_term').val(term);
             $('#service_term_type').val(termtype);

@@ -33,6 +33,7 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                 $serviceOptions = '';
                 for ($key = 0; $key < count($currentServices); $key++) {
                     $serviceOptions .= '<option data-id="' . $currentServices[$key]->kmapc_services_id . '" value="' . ((int)$key + 1) . '"
+                data-title="' . $currentServices[$key]->kmapc_services_title . '"
 	            data-term="' . $currentServices[$key]->kmapc_services_recurring_period_number . '"
 	            data-term-type="' . $currentServices[$key]->kmapc_services_recurring_period_type . '"
 	            data-price="' . $currentServices[$key]->kmapc_services_price . '" >' . $currentServices[$key]->kmapc_services_title . '</option>';
@@ -61,6 +62,7 @@ wp_enqueue_style('payment-form-css', '/wp-content/plugins/KMAPaymentCenter/css/f
                             <div class="input-group-addon" id="service_term_display"></div>
                         </div>
                     </div>
+                    <input type="hidden" name="service_title" id="service_title" value="">
                     <input type="hidden" name="service_term" id="service_term" value="">
                     <input type="hidden" name="service_term_type" id="service_term_type" value="">
                 </div>
