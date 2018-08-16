@@ -26,11 +26,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 //Other Fonts
 @import "fonts.scss";
 
-// Set Variables
-@import "variables.sass";
-
 //Bootstrap
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "~bootstrap/scss/bootstrap";
+//@import "bootstrap.scss";
 
 // WP Core
 @import "core.scss";

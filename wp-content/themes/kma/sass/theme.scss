@@ -96,8 +96,11 @@ body {
     -o-transition: all ease-in-out .25s;
     font-kerning: normal;
   }
+  strong, b {
+    font-weight: 600;
+  }
   .entry-content a {
-    color: #2f7788;
+    color: #2f7788 !important;
     font-weight: 500;
   }
 }
