@@ -272,6 +272,8 @@ svg#kma {
 .enews-signup {
   background: #222;
   padding: 3rem 0;
+  position: relative;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
