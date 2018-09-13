@@ -1958,6 +1958,96 @@ span.tooltip-button {
   }
 }
 
+//Digital Marketing Services
+.digital-marketing-services {
+  padding: 4rem 0 0;
+
+  h2 {
+    color: #7d7e7e;
+    font-size: 64px;
+    text-transform: uppercase;
+    font-family: 'Dharma Gothic Extra Light';
+
+    &::after {
+      content: " ";
+      display: block;
+      height: 2px;
+      background-color: rgba(0, 0, 0, 0.1);
+      width: 30%;
+      min-width: 150px;
+      max-width: none;
+      margin: 0 auto;
+    }
+  }
+
+  .consult-btn {
+    background-color: #2e5c6e !important;
+    color: #b4bd42 !important;
+    font-size: 1.7em;
+    padding: .25rem 1rem;
+    height: 41px;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  .consult-form {
+    background-color: #f2f4f6;
+    padding: 1rem;
+
+    h3 {
+      color: #2e5c6e;
+      text-transform: capitalize;
+    }
+
+  }
+
+  .toolbox-area {
+    background: url('/wp-content/themes/kma/img/diagonal-lines.png') top right no-repeat;
+    background-color: #f4fafd;
+    padding: 4rem 0;
+    text-align: center;
+
+    .icon-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 85px;
+      margin-top: 2rem;
+    }
+
+    h3 {
+      color: #b4bd42;
+      padding: 1rem 0;
+    }
+  }
+
+  .analytics-reporting {
+    .content-box {
+      padding:2rem;
+
+      &.reporting {
+        background-color: #d2db64;
+      }
+
+      &.strategy-call {
+        background-color: #b4bd42;
+      }
+
+      h3 {
+        color: #FFF;
+        padding: 1rem 0;
+      }
+
+      p {
+        color: #323233;
+      }
+    }
+
+  }
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .grayscale.grayscale-fade {
     -webkit-transition: -webkit-filter .5s;

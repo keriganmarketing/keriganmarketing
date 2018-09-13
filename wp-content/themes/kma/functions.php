@@ -376,3 +376,199 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+function validatePhone($string) {
+    $numbersOnly = str_replace("+", "", $string);
+    $numbersOnly = str_replace("(", "", $numbersOnly);
+    $numbersOnly = str_replace(")", "", $numbersOnly);
+    $numbersOnly = str_replace(" ", "", $numbersOnly);
+    $numbersOnly = str_replace("-", "", $numbersOnly);
+    $numberOfDigits = strlen($numbersOnly);
+    if ($numberOfDigits <= 15 && $numberOfDigits >= 10) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+add_shortcode( 'consult_form', function($atts){
+    $a = shortcode_atts( [], $atts );
+
+    ob_start();
+
+    $passCheck = TRUE;
+    $leads = new kmaLeads();
+    $honeypot = new Akismet( site_url(),'16d52e09a262');
+
+    //OK... form was submitted and it's not a bot... probably
+    if($_POST['sec'] == '' && $_POST['formId'] == 'Digital Consult' ){
+
+        //assign vars to our post items
+        $website = $_POST['your_website'];
+        $name    = $_POST['your_name'];
+        $email   = $_POST['your_email'];
+        $phone   = $_POST['your_phone'];
+        $budget  = $_POST['your_budget'];
+
+        $adderror = array(); //make array of error data so we can loop it later
+
+        if($name == ''){
+            $passCheck = FALSE;
+            $adderror[] = 'First and last name are required. How else will we know who you are?';
+        }
+        if($email == ''){
+            $passCheck = FALSE;
+            $adderror[] = 'Please include your email address. You have one don\'t you?';
+        }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match('/@.+\./', $email)) {
+            $passCheck = FALSE;
+            $emailFormattedBadly = TRUE;
+            $adderror[] = 'The email address you entered doesn\'t look quite right. Better take another look.';
+        }
+
+        if($phone == ''){
+            $passCheck = FALSE;
+            $adderror[] = 'How would you like us to call you? We promise not to give your number to telemarketers.';
+        }elseif(!validatePhone($phone)){
+            $passCheck = FALSE;
+            $phoneFormattedBadly = TRUE;
+            $adderror[] = 'Please use the standard 10-digit phone number format.';
+        }
+
+        $successmessage = '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span><span class="sr-only">Success:</span> ';
+        $errormessage = '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> ';
+
+        if($passCheck) {
+
+            //SET UP AND SEND LEAD VIA EMAIL
+            //Set up headers
+            $sendadmin = array(
+                'to' => 'project@kerigan.com',
+                'from' => get_bloginfo() . ' <noreply@kerigan.com>',
+                'subject' => 'Digital Consultation submission from website',
+                'bcc' => 'support@kerigan.com',
+                'replyto' => $email
+            );
+            $sendreceipt = array(
+                'to' => $email,
+                'from' => get_bloginfo() . ' <noreply@kerigan.com>',
+                'subject' => 'Your Digital Consultation',
+                'bcc' => 'support@kerigan.com'
+            );
+
+            //datafields for email
+            $postvars = array(
+                'Name'          => $name,
+                'Website'       => $website,
+                'Email Address' => $email,
+                'Phone Number'  => $phone,
+                'Budget'        => $budget
+            );
+
+            $fontstyle = 'font-family: sans-serif;';
+            $headlinestyle = 'style="font-size:20px; ' . $fontstyle . ' color:#000;"';
+            $copystyle = 'style="font-size:16px; ' . $fontstyle . ' color:#333;"';
+            $labelstyle = 'style="padding:4px 8px; background:#eaeaea; border:1px solid #fff; font-weight:bold; ' . $fontstyle . ' font-size:14px; color:#333; width:150px;"';
+            $datastyle = 'style="padding:4px 8px; background:#eaeaea; border:1px solid #fff; ' . $fontstyle . ' font-size:14px; color:#333; "';
+
+            $adminintrocopy = '<p ' . $copystyle . '>Details are below:</p>';
+            $receiptintrocopy = '<p ' . $copystyle . '>Thank you for your interest in Kerigan Marketing Associates. Your project is important to us and you can expect to hear back within 24 hours. What you submitted is below:</p>';
+	        $dateofemail = '<p style="font-size:12px; ' . $fontstyle . ' color:#000; text-align:center; margin:20px 0 0;">Date Submitted: ' . date('M j, Y') . ' @ ' . date('g:i a') . '</p>';
+
+            $submittedData = '<table cellpadding="0" cellspacing="0" border="0" style="width:100%" ><tbody>';
+
+	        $followups = '<p style="font-size:16px; margin:20px 20px 15px; ' . $fontstyle . ' color:#333; text-align: center;" >Ready for more marketing?</p>
+            <table cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top:10px;"  ><tr><td style="background-color: #000; padding:10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius:10px; border-bottom:3px solid #999;"><a style="'.$fontstyle.' display: block; color:#FFF; text-decoration:none;" href="https://keriganmarketing.com/about/">Meet our talented team.</a></td></tr></table><br>
+            <table cellspacing="0" cellpadding="0" border="0" align="center" style="margin-top:10px;"  ><tr><td style="background-color: #000; padding:10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius:10px; border-bottom:3px solid #999;"><a style="'.$fontstyle.' display: block; color:#FFF; text-decoration:none;" href="https://keriganmarketing.com/newsroom/">Get free news on marketing tips and info.</a></td></tr></table>';
+
+	        foreach ($postvars as $key => $var) {
+                if (!is_array($var)) {
+                    $submittedData .= '<tr><td ' . $labelstyle . ' >' . $key . '</td><td ' . $datastyle . '>' . $var . '</td></tr>';
+                } else {
+                    $submittedData .= '<tr><td ' . $labelstyle . ' >' . $key . '</td><td ' . $datastyle . '>';
+                    foreach ($var as $k => $v) {
+                        $submittedData .= '<span style="display:block;width:100%;">' . $v . '</span><br>';
+                    }
+                    $submittedData .= '</ul></td></tr>';
+                }
+            }
+            $submittedData .= '</tbody></table>';
+
+            $emaildata = array(
+                'headline' => '<h2 ' . $headlinestyle . '>' . $sendadmin['subject'] . '</h2>',
+                'introcopy' => $adminintrocopy . $submittedData . $dateofemail,
+            );
+            $receiptdata = array(
+                'headline' => '<h2 ' . $headlinestyle . '>' . $sendreceipt['subject'] . '</h2>',
+                'introcopy' => $receiptintrocopy . $submittedData . $followups . $dateofemail,
+            );
+
+            $leads->sendEmail($sendadmin, $emaildata);
+            $leads->sendEmail($sendreceipt, $receiptdata);
+
+            //Insert Post based on form submission
+            $leads->wp_insert_post(
+                array( //POST INFO
+                    'post_content' => '',
+                    'post_status' => 'publish',
+                    'post_type' => 'lead',
+                    'post_title' => $name . ' on ' . date('M j, Y'),
+                    'comment_status' => 'closed',
+                    'ping_status' => 'closed',
+                    'meta_input' => array( //POST META
+                        'lead_info_lead_type' => $_POST['formId'],
+                        'lead_info_name' => $name,
+                        'lead_info_date' => date('M j, Y') . ' @ ' . date('g:i a e'),
+                        'lead_info_phone_number' => $phone,
+                        'lead_info_email_address' => $email,
+                        'lead_info_interests' => $rServiceList,
+                        'lead_info_message' => 'Digital Consult: ' . $website . ', ' . $budget,
+                    )
+                ), true
+            );
+
+            $successmessage .= '<strong>Thank you for your interest in Kerigan Marketing Associates. Your project is important to us and you can expect to hear back within 24 hours.</strong>';
+            $showAlert = '<div class="alert alert-success" role="alert">'.$successmessage.'</div>';
+
+        } else { // Pass failed. Let's show an error message.
+
+            $listErrors = '';
+            foreach($adderror as $errorDirection) {
+                $listErrors .= '<br>• '.$errorDirection;
+            }
+            $errormessage .= '<strong>Errors were found in your submission. Please correct the indicated fields below and try again.</strong>';
+            $showAlert = '<div class="alert alert-danger" role="alert">'.$errormessage.$listErrors.'</div>';
+
+        }
+
+    }
+
+    if( $showAlert != '' ){
+        echo $showAlert;
+    }
+    ?>
+    <form class="form" method="post" >
+        <div class="form-group">
+            <input type="text" name="your_website" placeholder="Your Website" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="your_name" placeholder="Your Name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="your_email" placeholder="Your Email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="your_phone" placeholder="Your Phone" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="your_budget" placeholder="Your Budget" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
+            <input type="text" value="" class="sec" name="sec" style="position:absolute; height:1px; width:1px; visibility:hidden; top:-1px; left: -1px;" >
+            <input type="hidden" value="Digital Consult" name="formId" >
+            <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Get My Free Consultation</button>
+        </div>
+    </form>
+    <?php
+    return ob_get_clean();
+} );
