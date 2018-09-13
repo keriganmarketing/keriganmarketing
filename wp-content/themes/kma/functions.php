@@ -562,12 +562,10 @@ add_shortcode( 'consult_form', function($atts){
         <div class="form-group">
             <input type="text" name="your_budget" placeholder="Your Budget" class="form-control" required>
         </div>
-        <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
-            <input type="text" value="" class="sec" name="sec" style="position:absolute; height:1px; width:1px; visibility:hidden; top:-1px; left: -1px;" >
-            <input type="hidden" value="Digital Consult" name="formId" >
-            <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Get My Free Consultation</button>
-        </div>
+        <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
+        <input type="text" value="" class="sec" name="sec" style="position:absolute; height:1px; width:1px; visibility:hidden; top:-1px; left: -1px;" >
+        <input type="hidden" value="Digital Consult" name="formId" >
+        <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Get My Free Consultation</button>
     </form>
     <?php
     return ob_get_clean();
