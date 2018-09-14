@@ -425,15 +425,6 @@ add_shortcode( 'consult_form', function($atts){
             $adderror[] = 'The email address you entered doesn\'t look quite right. Better take another look.';
         }
 
-        if($phone == ''){
-            $passCheck = FALSE;
-            $adderror[] = 'How would you like us to call you? We promise not to give your number to telemarketers.';
-        }elseif(!validatePhone($phone)){
-            $passCheck = FALSE;
-            $phoneFormattedBadly = TRUE;
-            $adderror[] = 'Please use the standard 10-digit phone number format.';
-        }
-
         $successmessage = '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span><span class="sr-only">Success:</span> ';
         $errormessage = '<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span><span class="sr-only">Error:</span> ';
 
@@ -457,11 +448,11 @@ add_shortcode( 'consult_form', function($atts){
 
             //datafields for email
             $postvars = array(
-                'Name'          => $name,
-                'Website'       => $website,
-                'Email Address' => $email,
-                'Phone Number'  => $phone,
-                'Budget'        => $budget
+                'Name'           => $name,
+                'Website'        => $website,
+                'Email Address'  => $email,
+                'Phone Number'   => $phone,
+                'Monthly Budget' => $budget
             );
 
             $fontstyle = 'font-family: sans-serif;';
@@ -548,19 +539,25 @@ add_shortcode( 'consult_form', function($atts){
     ?>
     <form class="form" method="post" >
         <div class="form-group">
-            <input type="text" name="your_website" placeholder="Your Website" class="form-control" required>
+            <input type="text" name="your_website" placeholder="Your Website *" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" name="your_name" placeholder="Your Name" class="form-control" required>
+            <input type="text" name="your_name" placeholder="Your Name *" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" name="your_email" placeholder="Your Email" class="form-control" required>
+            <input type="text" name="your_email" placeholder="Your Email *" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" name="your_phone" placeholder="Your Phone" class="form-control" required>
+            <input type="text" name="your_phone" placeholder="Your Phone" class="form-control">
         </div>
         <div class="form-group">
-            <input type="text" name="your_budget" placeholder="Your Budget" class="form-control" required>
+            <select class="custom-select" name="your_budget" required style="width:100%;" >
+                <option value="">Monthly Budget *</option>
+                <option value="$1,000 - $1,499">$1,000 - $1,499</option>
+                <option value="$1,500 - $2,499">$1,500 - $2,499</option>
+                <option value="$2,500 - $4,999">$2,500 - $4,999</option>
+                <option value="$5,000 - $7,499">$5,000 - $7,499</option>
+            </select>
         </div>
         <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
         <input type="text" value="" class="sec" name="sec" style="position:absolute; height:1px; width:1px; visibility:hidden; top:-1px; left: -1px;" >
