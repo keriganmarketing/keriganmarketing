@@ -39,10 +39,6 @@ class ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'C' => 
-        array (
-            'Carbon\\' => 7,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -82,10 +78,10 @@ class ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
-        ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
     );
 
     public static $classMap = array (
@@ -103,6 +99,7 @@ class ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInit17cca1a0c829138921386bbb06a7a7e2::$classMap;
 
         }, null, ClassLoader::class);
