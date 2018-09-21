@@ -518,7 +518,7 @@ add_shortcode( 'consult_form', function($atts){
             );
 
             $successmessage .= '<strong>Thank you for your interest in Kerigan Marketing Associates. Your project is important to us and you can expect to hear back within 24 hours.</strong>';
-            $showAlert = '<div class="alert alert-success" role="alert">'.$successmessage.'</div>';
+            $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>';
 
         } else { // Pass failed. Let's show an error message.
 

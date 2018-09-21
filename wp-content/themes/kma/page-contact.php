@@ -203,7 +203,7 @@ if($_POST['sec'] == '' && $_POST['formId'] == 'Contact Form' ){
             );
 
             $successmessage .= '<strong>Thank you for contacting Kerigan Marketing Associates. We really appreciate your interest and you can expect to hear back within 24 hours.</strong>';
-            $showAlert = '<div class="alert alert-success" role="alert">'.$successmessage.'</div>';
+            $showAlert = '<div class="alert alert-success contact-form" role="alert">'.$successmessage.'</div>';
 
         } else { // Pass failed. Let's show an error message.
 
