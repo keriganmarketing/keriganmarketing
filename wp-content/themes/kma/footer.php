@@ -135,33 +135,5 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
         <?php } ?>
     });
 </script>
-
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-15421411-1', 'keriganmarketing.com');
-    ga('send', 'pageview');
-</script>
-<script type="text/javascript">
-    var _mfq = _mfq || [];
-    (function () {
-        var mf = document.createElement("script");
-        mf.type = "text/javascript";
-        mf.async = true;
-        mf.src = "//cdn.mouseflow.com/projects/fecb17e6-699d-4885-9c51-b3d901b50aba.js";
-        document.getElementsByTagName("head")[0].appendChild(mf);
-    })();
-</script>
-<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4026727.js"></script>
 </body>
 </html>

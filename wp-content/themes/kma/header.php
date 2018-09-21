@@ -15,27 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
-    <script type="text/javascript">
-        (function (a, e, c, f, g, h, b, d) {
-            let k = {ak: "851550142", cl: "RCPjCMLmtnUQvr-GlgM", autoreplace: "850-648-4560"};
-            a[c] = a[c] || function () { (a[c].q = a[c].q || []).push(arguments) };
-            a[g] || (a[g] = k.ak);
-            b = e.createElement(h);
-            b.async = 1;
-            b.src = "//www.gstatic.com/wcm/loader.js";
-            d = e.getElementsByTagName(h)[0];
-            d.parentNode.insertBefore(b, d);
-            a[f] = function (b, d, e) { a[c](2, b, k, d, null, new Date, e) }; a[f]() })(window, document, "_googWcmImpl", "_googWcmGet", "_googWcmAk", "script");
-    </script>
-    <script id="mcjs">
-        !function (c, h, i, m, p) {
-            m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode.insertBefore(m, p)
-        }(document, "script", "https://chimpstatic.com/mcjs-connected/js/users/8ea4a7c6d74936f9af7e68314/90a1ba0494a3bafe3af656f58.js");
-    </script>
 </head>
 <body <?php body_class(); ?> >
-<script type="text/javascript" src="https://secure.leadforensics.com/js/79406.js"></script>
-<noscript><img src="https://secure.leadforensics.com/79406.png" style="display:none;"/></noscript>
 <div id="page" class="site">
     <a style="display:none;" class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content',
             'kma'); ?></a>
