@@ -57,7 +57,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
                 <div class="contact-container">
                     <p>3706 Hwy 98, Suite 102<br>
                         Mexico Beach, FL 32456<br>
-                        850-648-4560</p>
+                        850-807-4123</p>
                     <div class="g-partner-container fadein">
                         <script src="https://apis.google.com/js/platform.js" async></script>
                         <div class="g-partnersbadge" data-agency-id="2550211180"></div>
