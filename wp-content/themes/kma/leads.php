@@ -49,7 +49,7 @@ class kmaLeads {
 
         //search for directory in active WP template
         if(file_exists(get_template_directory().'/emailtemplate.php')){
-            $emailTemplate = get_template_directory().'/emailtemplate.php');
+            $emailTemplate = get_template_directory().'/emailtemplate.php';
         }else{
 
             $emailTemplate = '<!doctype html>
