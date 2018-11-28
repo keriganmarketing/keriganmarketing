@@ -55,8 +55,8 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
         <div class="row">
             <div class="col text-center">
                 <div class="contact-container">
-                    <p>161 Good Morning Street, Suite #101<br>
-                        Port St Joe FL 32456<br>
+                    <p>161 Good Morning Street, Ste 101<br>
+                        Port St. Joe, Florida 32456<br>
                         <a style="color: #FFF" href="tel:850-648-4560">850-648-4560</a> or <a style="color: #FFF" href="tel:850-807-4123">850-807-4123</a></p>
                     <div class="g-partner-container fadein">
                         <script src="https://apis.google.com/js/platform.js" async></script>
