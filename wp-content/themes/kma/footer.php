@@ -55,9 +55,9 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
         <div class="row">
             <div class="col text-center">
                 <div class="contact-container">
-                    <p>3706 Hwy 98, Suite 102<br>
-                        Mexico Beach, FL 32456<br>
-                        850-807-4123</p>
+                    <p>161 Good Morning Street, Suite #101<br>
+                        Port St Joe FL 32456<br>
+                        <a href="tel:850-648-4560">850-648-4560</a> or <a href="tel:850-807-4123">850-807-4123</a></p>
                     <div class="g-partner-container fadein">
                         <script src="https://apis.google.com/js/platform.js" async></script>
                         <div class="g-partnersbadge" data-agency-id="2550211180"></div>
