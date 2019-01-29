@@ -713,9 +713,11 @@ add_shortcode( 'whitepaper_form', function($atts){
             echo $showAlert;
         }
 
-    }else{
+    }
+    
+    if($showAlert || !isset($_POST['sec'])){
     ?>
-    <form class="form" method="post" >
+    <form class="form" method="post" action="#success" >
         <div class="form-group">
             <input type="text" name="your_name" placeholder="Your Name *" class="form-control" required>
         </div>
@@ -732,7 +734,6 @@ add_shortcode( 'whitepaper_form', function($atts){
         <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</button>
     </form>
     <?php
-    
     }
 
     return ob_get_clean();
