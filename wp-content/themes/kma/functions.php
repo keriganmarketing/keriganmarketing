@@ -611,7 +611,7 @@ add_shortcode( 'whitepaper_form', function($atts){
             //SET UP AND SEND LEAD VIA EMAIL
             //Set up headers
             $sendadmin = array(
-                'to' => 'bryan@kerigan.com',
+                'to' => 'project@kerigan.com',
                 'from' => get_bloginfo() . ' <noreply@mg.kerigan.com>',
                 'subject' => 'Whitepaper download and registration from website',
                 'bcc' => 'support@kerigan.com',
@@ -695,7 +695,7 @@ add_shortcode( 'whitepaper_form', function($atts){
 
             $successmessage .= 'Thank you for your interest in our whitepaper, ' . $whitepaper['name'] . '.';
             $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>
-            <a href="' . $whitepaper['link'] . '" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</a>
+            <a target="_blank" href="' . $whitepaper['link'] . '" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</a>
             <p class="mt-4" >We emailed you a download link as well.</p>
             ';
 
@@ -735,7 +735,7 @@ add_shortcode( 'whitepaper_form', function($atts){
         <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
         <input type="text" value="" class="sec" name="sec" style="position:absolute; height:1px; width:1px; visibility:hidden; top:-1px; left: -1px;" >
         <input type="hidden" value="Whitepaper Download" name="formId" >
-        <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Register</button>
+        <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Submit</button>
     </form>
     <?php
     }
