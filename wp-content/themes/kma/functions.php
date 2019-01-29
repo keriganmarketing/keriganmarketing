@@ -695,7 +695,7 @@ add_shortcode( 'whitepaper_form', function($atts){
                 ), true
             );
 
-            $successmessage .= 'Thank you for downloading our whitepaper, ' . $whitepaper['name'] . '. You may <a style="text-decoration: underline; font-weight: bold;" href="' . $whitepaper['link'] . '" >Download it here</a>. We\'ve emailed you a download link as well.';
+            $successmessage .= 'Thank you for your interest in our whitepaper, ' . $whitepaper['name'] . '. You may <a style="text-decoration: underline; font-weight: bold;" href="' . $whitepaper['link'] . '" >Click here to download</a>. We\'ve emailed you a download link as well.';
             $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>';
 
         } else { // Pass failed. Let's show an error message.
@@ -709,7 +709,7 @@ add_shortcode( 'whitepaper_form', function($atts){
 
         }
 
-    }
+    }else{
 
     if( $showAlert != '' ){
         echo $showAlert;
@@ -733,4 +733,5 @@ add_shortcode( 'whitepaper_form', function($atts){
     </form>
     <?php
     return ob_get_clean();
+    }
 } );
