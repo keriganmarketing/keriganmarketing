@@ -709,11 +709,11 @@ add_shortcode( 'whitepaper_form', function($atts){
 
         }
 
-    }else{
+        if( $showAlert != '' ){
+            echo $showAlert;
+        }
 
-    if( $showAlert != '' ){
-        echo $showAlert;
-    }
+    }else{
     ?>
     <form class="form" method="post" >
         <div class="form-group">
