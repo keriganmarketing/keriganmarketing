@@ -695,7 +695,7 @@ add_shortcode( 'whitepaper_form', function($atts){
                 ), true
             );
 
-            $successmessage .= '<strong>Thank you for downloading our whitepaper, ' . $whitepaper['name'] . '. You may <a href="' . $whitepaper['name'] . '" >Download it here</a>. We\'ve emailed you a download link as well.</strong>';
+            $successmessage .= 'Thank you for downloading our whitepaper, ' . $whitepaper['name'] . '. You may <a style="text-decoration: underline; font-weight: bold;" href="' . $whitepaper['link'] . '" >Download it here</a>. We\'ve emailed you a download link as well.';
             $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>';
 
         } else { // Pass failed. Let's show an error message.
