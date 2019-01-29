@@ -612,15 +612,15 @@ add_shortcode( 'whitepaper_form', function($atts){
             //SET UP AND SEND LEAD VIA EMAIL
             //Set up headers
             $sendadmin = array(
-                'to' => 'project@kerigan.com',
-                'from' => get_bloginfo() . ' <noreply@kerigan.com>',
+                'to' => 'bryan@kerigan.com',
+                'from' => get_bloginfo() . ' <noreply@mg.kerigan.com>',
                 'subject' => 'Whitepaper download and registration from website',
                 'bcc' => 'support@kerigan.com',
                 'replyto' => $email
             );
             $sendreceipt = array(
                 'to' => $email,
-                'from' => get_bloginfo() . ' <noreply@kerigan.com>',
+                'from' => get_bloginfo() . ' <noreply@mg.kerigan.com>',
                 'subject' => 'Your Whitepaper Download',
                 'bcc' => 'support@kerigan.com'
             );
@@ -715,7 +715,7 @@ add_shortcode( 'whitepaper_form', function($atts){
 
     }
     
-    if($showAlert || !isset($_POST['sec'])){
+    if($showAlert || !isset($_POST['formId'])){
     ?>
     <form class="form" method="post" action="#success" >
         <div class="form-group">
