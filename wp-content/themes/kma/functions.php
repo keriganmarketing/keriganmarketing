@@ -418,11 +418,11 @@ add_shortcode( 'consult_form', function($atts){
         }
         if($email == ''){
             $passCheck = FALSE;
-            $adderror[] = 'Please include your email address. You have one don\'t you?';
+            $adderror[] = 'Please include your email address.';
         }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match('/@.+\./', $email)) {
             $passCheck = FALSE;
             $emailFormattedBadly = TRUE;
-            $adderror[] = 'The email address you entered doesn\'t look quite right. Better take another look.';
+            $adderror[] = 'The email address you entered isn\'t formatted correctly.';
         }
 
         $successmessage = '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span><span class="sr-only">Success:</span> ';
@@ -596,11 +596,11 @@ add_shortcode( 'whitepaper_form', function($atts){
         }
         if($email == ''){
             $passCheck = FALSE;
-            $adderror[] = 'Please include your email address. You have one don\'t you?';
+            $adderror[] = 'Please include your email address.';
         }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match('/@.+\./', $email)) {
             $passCheck = FALSE;
             $emailFormattedBadly = TRUE;
-            $adderror[] = 'The email address you entered doesn\'t look quite right.';
+            $adderror[] = 'The email address you entered isn\'t formatted correctly.';
         }
 
         $successmessage = '<span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span><span class="sr-only">Success:</span> ';
