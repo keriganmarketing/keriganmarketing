@@ -696,7 +696,7 @@ add_shortcode( 'whitepaper_form', function($atts){
             $successmessage .= 'Thank you for your interest in our whitepaper, ' . $whitepaper['name'] . '.';
             $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>
             <a href="' . $whitepaper['link'] . '" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</a>
-            <p>We emailed you a download link as well.</p>
+            <p class="mt-4" >We emailed you a download link as well.</p>
             ';
 
         } else { // Pass failed. Let's show an error message.
@@ -716,7 +716,7 @@ add_shortcode( 'whitepaper_form', function($atts){
 
     }
     
-    if($showAlert || !isset($_POST['formId'])){
+    if(!$passCheck || !isset($_POST['formId'])){
     ?>
     <form class="form" method="post" action="#success" >
         <div class="form-group">
