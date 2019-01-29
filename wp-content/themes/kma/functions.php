@@ -717,7 +717,7 @@ add_shortcode( 'whitepaper_form', function($atts){
     ?>
     <form class="form" method="post" >
         <div class="form-group">
-            <input type="text" name="your_website" placeholder="Your Website *" class="form-control" required>
+            <input type="text" name="your_website" placeholder="Your Website" class="form-control" >
         </div>
         <div class="form-group">
             <input type="text" name="your_name" placeholder="Your Name *" class="form-control" required>
