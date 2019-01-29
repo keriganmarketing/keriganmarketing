@@ -732,6 +732,8 @@ add_shortcode( 'whitepaper_form', function($atts){
         <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</button>
     </form>
     <?php
-    return ob_get_clean();
+    
     }
+
+    return ob_get_clean();
 } );
