@@ -587,7 +587,6 @@ add_shortcode( 'whitepaper_form', function($atts){
         $website = $_POST['your_website'];
         $name    = $_POST['your_name'];
         $email   = $_POST['your_email'];
-        $phone   = $_POST['your_phone'];
 
         $adderror = array(); //make array of error data so we can loop it later
 
@@ -629,8 +628,7 @@ add_shortcode( 'whitepaper_form', function($atts){
             $postvars = array(
                 'Name'           => $name,
                 'Website'        => $website,
-                'Email Address'  => $email,
-                'Phone Number'   => $phone
+                'Email Address'  => $email
             );
 
             $fontstyle = 'font-family: sans-serif;';
@@ -695,8 +693,11 @@ add_shortcode( 'whitepaper_form', function($atts){
                 ), true
             );
 
-            $successmessage .= 'Thank you for your interest in our whitepaper, ' . $whitepaper['name'] . '. You may <a style="text-decoration: underline; font-weight: bold;" href="' . $whitepaper['link'] . '" >Click here to download</a>. We\'ve emailed you a download link as well.';
-            $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>';
+            $successmessage .= 'Thank you for your interest in our whitepaper, ' . $whitepaper['name'] . '.';
+            $showAlert = '<div class="alert alert-success digital-marketing" role="alert">'.$successmessage.'</div>
+            <a href="' . $whitepaper['link'] . '" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</a>
+            <p>We emailed you a download link as well.</p>
+            ';
 
         } else { // Pass failed. Let's show an error message.
 
@@ -719,19 +720,22 @@ add_shortcode( 'whitepaper_form', function($atts){
     ?>
     <form class="form" method="post" action="#success" >
         <div class="form-group">
-            <input type="text" name="your_name" placeholder="Your Name *" class="form-control" required>
+            <input type="text" name="your_name" placeholder="Your Name *" class="form-control" required
+            value="<?php echo (isset($name) ? $name : null); ?>">
         </div>
         <div class="form-group">
-            <input type="text" name="your_email" placeholder="Your Email *" class="form-control" required>
+            <input type="text" name="your_email" placeholder="Your Email *" class="form-control" required
+            value="<?php echo (isset($email) ? $email : null); ?>">
         </div>
         <div class="form-group">
-            <input type="text" name="your_website" placeholder="Your Website" class="form-control" >
+            <input type="text" name="your_website" placeholder="Your Website" class="form-control" 
+            value="<?php echo (isset($website) ? $website : null); ?>">
         </div>
 
         <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
         <input type="text" value="" class="sec" name="sec" style="position:absolute; height:1px; width:1px; visibility:hidden; top:-1px; left: -1px;" >
         <input type="hidden" value="Whitepaper Download" name="formId" >
-        <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Download Whitepaper</button>
+        <button type="submit" class="btn btn-block btn-primary btn-rounded consult-btn" >Register</button>
     </form>
     <?php
     }
