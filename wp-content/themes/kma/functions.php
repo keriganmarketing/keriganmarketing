@@ -581,7 +581,7 @@ add_shortcode( 'whitepaper_form', function($atts){
     $honeypot = new Akismet( site_url(),'16d52e09a262');
 
     //OK... form was submitted and it's not a bot... probably
-    if($_POST['sec'] == '' && $_POST['formId'] == 'Digital Consult' ){
+    if($_POST['sec'] == '' && $_POST['formId'] == 'Whitepaper Download' ){
 
         //assign vars to our post items
         $website = $_POST['your_website'];
