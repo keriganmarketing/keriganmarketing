@@ -717,16 +717,13 @@ add_shortcode( 'whitepaper_form', function($atts){
     ?>
     <form class="form" method="post" >
         <div class="form-group">
-            <input type="text" name="your_website" placeholder="Your Website" class="form-control" >
-        </div>
-        <div class="form-group">
             <input type="text" name="your_name" placeholder="Your Name *" class="form-control" required>
         </div>
         <div class="form-group">
             <input type="text" name="your_email" placeholder="Your Email *" class="form-control" required>
         </div>
         <div class="form-group">
-            <input type="text" name="your_phone" placeholder="Your Phone" class="form-control">
+            <input type="text" name="your_website" placeholder="Your Website" class="form-control" >
         </div>
 
         <div class="g-recaptcha" data-sitekey="6LcwNxQUAAAAANUji96UxBvziKoMjCw4A0fZdsrM"></div>
