@@ -569,7 +569,7 @@ add_shortcode( 'consult_form', function($atts){
 } );
 
 add_shortcode( 'whitepaper_form', function($atts){
-    $a = shortcode_atts( [
+    $whitepaper = shortcode_atts( [
         'link' => '',
         'name' => ''
     ], $atts );
