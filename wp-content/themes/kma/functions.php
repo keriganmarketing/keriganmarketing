@@ -613,7 +613,7 @@ add_shortcode( 'whitepaper_form', function($atts){
             $sendadmin = array(
                 'to' => 'project@kerigan.com',
                 'from' => get_bloginfo() . ' <noreply@mg.kerigan.com>',
-                'subject' => 'Whitepaper download and registration from website',
+                'subject' => $whitepaper['name'] .'Whitepaper download and registration from website',
                 'bcc' => 'support@kerigan.com',
                 'replyto' => $email
             );
