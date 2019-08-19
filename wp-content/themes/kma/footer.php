@@ -53,7 +53,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col-md-4 py-2">
+            <div class="col-md-4 text-center pt-4 py-md-2">
                 <div class="g-partner-container fadein">
                     <script src="https://apis.google.com/js/platform.js" async></script>
                     <div class="g-partnersbadge" data-agency-id="2550211180"></div>
@@ -78,7 +78,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 py-2"><img src="/images/wbe-logo.png" class="img-fluid" alt="KMA is a Certified Women Owned Company" ></div>
+            <div class="col-md-4 text-center py-2"><img src="/images/wbe-logo.png" class="img-fluid" alt="KMA is a Certified Women Owned Company" ></div>
         </div>
     </div>
 </div>
