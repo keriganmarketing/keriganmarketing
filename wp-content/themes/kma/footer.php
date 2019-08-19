@@ -53,13 +53,13 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
             </div>
         </div>
         <div class="row align-items-center">
-            <div class="col md-4">
+            <div class="col-md-4">
                 <div class="g-partner-container fadein">
                     <script src="https://apis.google.com/js/platform.js" async></script>
                     <div class="g-partnersbadge" data-agency-id="2550211180"></div>
                 </div>
             </div>
-            <div class="col md-4 text-center">
+            <div class="col-md-4 text-center">
                 <div class="contact-container">
                     <p>161 Good Morning Street, Ste 101<br>
                         Port St. Joe, Florida 32456<br>
@@ -78,7 +78,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
                     </div>
                 </div>
             </div>
-            <div class="col md-4"><img src="/images/wbe-logo.png" class="img-fluid" alt="KMA is a Certified Women Owned Company" ></div>
+            <div class="col-md-4"><img src="/images/wbe-logo.png" class="img-fluid" alt="KMA is a Certified Women Owned Company" ></div>
         </div>
     </div>
 </div>
