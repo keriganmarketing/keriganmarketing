@@ -53,7 +53,8 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
             </div>
         </div>
         <div class="row">
-            <div class="col text-center">
+            <div class="col md-4"></div>
+            <div class="col md-4 text-center">
                 <div class="contact-container">
                     <p>161 Good Morning Street, Ste 101<br>
                         Port St. Joe, Florida 32456<br>
@@ -75,6 +76,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
                     </div>
                 </div>
             </div>
+            <div class="col md-4"><img src="/images/wbe-logo.png" class="img-fluid" alt="KMA is a Certified Women Owned Company" ></div>
         </div>
     </div>
 </div>
