@@ -52,7 +52,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row align-items-center">
             <div class="col md-4"></div>
             <div class="col md-4 text-center">
                 <div class="contact-container">
