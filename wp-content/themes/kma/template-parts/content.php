@@ -33,7 +33,9 @@ if(get_field('headline')!=''){
                                 <div class="social share">
                                     <h3>Share this:</h3>
                                     <?php $currentUrl = (isset($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>
-                                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($currentUrl); ?>" target="_blank"></a>
+                                    <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($currentUrl); ?>" target="_blank">
+                                        <img src="<?php echo get_template_directory_uri() . '/img/facebook.svg'; ?>" width="30" >
+                                    </a>
                                     <a class="twitter" href="https://twitter.com/home?status=<?php echo urlencode($currentUrl); ?>" target="_blank"></a>
                                     <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode($currentUrl); ?>&title=<?php echo urlencode(strip_tags(get_the_title())); ?>&summary=<?php echo urlencode(strip_tags($post->post_content)); ?>&source=https%3A//keriganmarketing.com" target="_blank"></a>
                                     <a class="googleplus" href="https://plus.google.com/share?url=<?php echo urlencode($currentUrl); ?>" target="_blank"></a>
