@@ -36,9 +36,15 @@ if(get_field('headline')!=''){
                                     <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($currentUrl); ?>" target="_blank">
                                         <img src="<?php echo get_template_directory_uri() . '/img/facebook.svg'; ?>" width="30" >
                                     </a>
-                                    <a class="twitter" href="https://twitter.com/home?status=<?php echo urlencode($currentUrl); ?>" target="_blank"></a>
-                                    <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode($currentUrl); ?>&title=<?php echo urlencode(strip_tags(get_the_title())); ?>&summary=<?php echo urlencode(strip_tags($post->post_content)); ?>&source=https%3A//keriganmarketing.com" target="_blank"></a>
-                                    <a class="googleplus" href="https://plus.google.com/share?url=<?php echo urlencode($currentUrl); ?>" target="_blank"></a>
+                                    <a class="twitter" href="https://twitter.com/home?status=<?php echo urlencode($currentUrl); ?>" target="_blank">
+                                        <img src="<?php echo get_template_directory_uri() . '/img/twitter.svg'; ?>" width="30" >
+                                    </a>
+                                    <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode($currentUrl); ?>&title=<?php echo urlencode(strip_tags(get_the_title())); ?>&summary=<?php echo urlencode(strip_tags($post->post_content)); ?>&source=https%3A//keriganmarketing.com" target="_blank">
+                                        <img src="<?php echo get_template_directory_uri() . '/img/linkedin.svg'; ?>" width="30" >
+                                    </a>
+                                    <!-- <a class="googleplus" href="https://plus.google.com/share?url=<?php echo urlencode($currentUrl); ?>" target="_blank">
+                                        <img src="<?php echo get_template_directory_uri() . '/img/googleplus.svg'; ?>" width="30" >
+                                    </a> -->
                                 </div>
                             </div><!-- .entry-meta -->
                         <?php endif; ?>	
