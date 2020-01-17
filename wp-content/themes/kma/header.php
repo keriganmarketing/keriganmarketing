@@ -15,6 +15,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <?php wp_head(); ?>
+	<script type="text/javascript">
+		var _ss = _ss || [];
+		_ss.push(['_setDomain', 'https://koi-3QNL7WRCLE.marketingautomation.services/net']);
+		_ss.push(['_setAccount', 'KOI-47DEK6DG08']);
+		_ss.push(['_trackPageView']);
+	(function() {
+		var ss = document.createElement('script');
+		ss.type = 'text/javascript'; ss.async = true;
+		ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNL7WRCLE.marketingautomation.services/client/ss.js?ver=2.2.1';
+		var scr = document.getElementsByTagName('script')[0];
+		scr.parentNode.insertBefore(ss, scr);
+	})();
+	</script>
 </head>
 <body <?php body_class(); ?> >
 <div id="page" class="site">

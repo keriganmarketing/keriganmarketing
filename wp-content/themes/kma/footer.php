@@ -98,19 +98,6 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
 
 </div>
 </body>
-<script type="text/javascript">
-    var _ss = _ss || [];
-    _ss.push(['_setDomain', 'https://koi-3QNL7WRCLE.marketingautomation.services/net']);
-    _ss.push(['_setAccount', 'KOI-47DEK6DG08']);
-    _ss.push(['_trackPageView']);
-(function() {
-    var ss = document.createElement('script');
-    ss.type = 'text/javascript'; ss.async = true;
-    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNL7WRCLE.marketingautomation.services/client/ss.js?ver=2.2.1';
-    var scr = document.getElementsByTagName('script')[0];
-    scr.parentNode.insertBefore(ss, scr);
-})();
-</script>
 <?php wp_footer(); ?>
 <script>
     $(document).ready(function () {
