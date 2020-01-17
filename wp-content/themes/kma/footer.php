@@ -97,6 +97,7 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
 </div>
 
 </div>
+</body>
 <script type="text/javascript">
     var _ss = _ss || [];
     _ss.push(['_setDomain', 'https://koi-3QNL7WRCLE.marketingautomation.services/net']);
@@ -152,5 +153,4 @@ if ($isArchive != '' || get_queried_object_id() == 0) {
         <?php } ?>
     });
 </script>
-</body>
 </html>
