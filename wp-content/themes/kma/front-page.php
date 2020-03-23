@@ -32,19 +32,18 @@ get_header(); ?>
 <div id="hider"></div>
 <div id="clickdown"><a class="circlebutton" href="#services-anchor">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50.38 14.24">
-            <defs>
-                <style>.cls-1 {
-                        fill: #fff;
-                        opacity: 0.8;
-                    }</style>
-            </defs>
-            <polygon class="cls-1" points="0 0 0 5.09 25.19 14.24 50.38 5.09 50.38 0 25.19 9 0 0"/>
+            <polygon class="cls-1" fill="#FFF" opacity="0.8" points="0 0 0 5.09 25.19 14.24 50.38 5.09 50.38 0 25.19 9 0 0"/>
         </svg>
     </a></div>
 <div id="video-container"></div>
 </div>
 <div class="clearfix"></div>
 <div id="mid">
+    <div class="covid-banner bg-primary">
+        <div class="container py-3 text-white text-center">
+            <p><strong>COVID-19 STATUS UPDATE:</strong> The KMA office is currently open. We are not a high traffic location and some of our staff members are working remotely. <a href="/kma-business-continuity-plan-for-coronavirus-spread/" >See blog post on KMA COVID-19 status.</a></p>
+        </div>
+    </div>
     <div id="copy-section">
         <div class="container text-center no-gutter">
             <div class="row justify-content-center align-items-center">
