@@ -39,8 +39,8 @@ get_header(); ?>
 </div>
 <div class="clearfix"></div>
 <div id="mid">
-    <div class="covid-banner bg-primary">
-        <div class="container py-3 text-white text-center">
+    <div class="covid-banner" style="background-color: #2F7788;">
+        <div class="container pt-4 text-white text-center">
             <p><strong>COVID-19 STATUS UPDATE:</strong> The KMA office is currently open. We are not a high traffic location and some of our staff members are working remotely. <a href="/kma-business-continuity-plan-for-coronavirus-spread/" >See blog post on KMA COVID-19 status.</a></p>
         </div>
     </div>
