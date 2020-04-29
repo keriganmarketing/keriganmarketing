@@ -20,7 +20,7 @@
     "chart.js": "^2.9.2",
     "font-awesome": "^4.7.0",
     "glob": "^7.1.5",
-    "jquery": "^2.1.0",
+    "jquery": "^3.5.0",
     "jquery-gray": "^1.6.0",
     "purgecss-webpack-plugin": "^0.20.1",
     "tether": "^1.4.7"
