@@ -17,7 +17,7 @@
     "autoprefixer": "^8.6.5",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "4.0.0-alpha.6",
-    "chart.js": "^2.9.2",
+    "chart.js": "^2.9.4",
     "font-awesome": "^4.7.0",
     "glob": "^7.1.5",
     "jquery": "^2.1.0",
